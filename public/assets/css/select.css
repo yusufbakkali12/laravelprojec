@@ -1,0 +1,228 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* body{
+  background: #4285f4;
+} */
+::selection{
+  color: #fff;
+  background: #4285f4;
+}
+.wrapper{
+  width: 100%;
+}
+.select-btn, li{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+.select-btn{
+  border: 1px solid #dee2e6;
+  height: 38px;
+  padding: 0 17px;
+  font-size: 1rem;
+  background: #fff;
+  border-radius: 7px;
+  justify-content: space-between;
+  /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
+}
+.select-btn i{
+  font-size: 1rem;
+  transition: transform 0.3s linear;
+}
+.wrapper.active .select-btn i{
+  transform: rotate(-180deg);
+}
+.content{
+  position: absolute;
+  z-index: 1;
+  /* width: 12.7rem; */
+  width: 31.5%;
+  border: 1px solid #dee2e6;
+  display: none;
+  padding: 7px;
+  margin-top: 5px;
+  background: #fff;
+  border-radius: 7px;
+  /* box-shadow: 0 10px 25px rgba(0,0,0,0.1); */
+}
+.wrapper.active .content{
+  display: block;
+}
+.content .search{
+  position: relative;
+}
+.search i{
+  top: 50%;
+  left: 10px;
+  color: #999;
+  font-size: 1rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+  position: absolute;
+}
+.search input{
+  height: 30px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0 20px 0 43px;
+  border: 1px solid #B3B3B3;
+}
+.search input:focus{
+  padding-left: 42px;
+  border: 2px solid #4285f4;
+}
+.search input::placeholder{
+  color: #bfbfbf;
+}
+.content .options{
+  margin-top: 5px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 7px;
+}
+.options::-webkit-scrollbar{
+  width: 7px;
+}
+.options::-webkit-scrollbar-track{
+  background: #f1f1f1;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb:hover{
+  background: #b3b3b3;
+}
+.options li{
+  height: 27px;
+  padding: 0 13px;
+  font-size: 1rem;
+}
+.options li:hover, li.selected{
+  border-radius: 5px;
+  background: #f2f2f2;
+  padding-left: 7px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.hover-card:hover {
+    box-shadow: 0 0.8rem 2.4rem #05162833;
+
+}
+
+.hover-card{
+
+    box-shadow: 0 0.2rem 0.3rem #05162833;
+}
+
+
+
+
+.toastt {
+    /* z-index: -12; */
+    position: fixed;
+    top: 80%;
+    right: 30px;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px 35px 20px 25px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateX(calc(100% + 30px));
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+  }
+
+  .toastt.active {
+    transform: translateX(0%);
+  }
+
+  .toastt .toastt-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .toastt-content .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 35px;
+    background-color: #5cb377;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+  }
+
+  .toastt-content .message {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .message .text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+  }
+
+  .message .text.text-1 {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .toastt .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    padding: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .toastt .close:hover {
+    opacity: 1;
+  }
+
+  .toastt .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+
+  }
+
+  .toastt .progress:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    /* background-color: #4070f4; */
+    background-color: #5cb377;
+  }
+
+  .progress.active:before {
+    animation: progress 5s linear forwards;
+  }
+
+  @keyframes progress {
+    100% {
+      right: 100%;
+    }
+  }
+
