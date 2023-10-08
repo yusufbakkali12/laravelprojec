@@ -6,6 +6,7 @@ use App\Http\Controllers\BonComController;
 use App\Http\Controllers\FactuerController;
 use App\Http\Controllers\ListproductController;
 use App\Http\Controllers\Api\ApiFactuerController;
+use App\Http\Controllers\Api\ApiCustomizeController;
 // use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,8 @@ Route::resource('factuer', FactuerController::class);
 Route::resource('BonCom', BonComController::class);
 
 route::apiResource('factuers',ApiFactuerController::class);
+
+
+route::apiResource('customizefile',ApiCustomizeController::class);
+
+

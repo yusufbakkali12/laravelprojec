@@ -1,10 +1,17 @@
+
+
+// import  n2words  from './n2words'
+
+
+
+
 const d=new Date()
 var object_facture = ''
 
 
-toast = document.querySelector(".toastt");
-(closeIcon = document.querySelector(".close")),
-(progress = document.querySelector(".progress"));
+const toast = document.querySelector(".toastt");
+const closeIcon = document.querySelector(".close");
+const progress = document.querySelector(".progress");
 closeIcon.addEventListener("click", () => {
     toast.classList.remove("active");
     setTimeout(() => {
@@ -25,7 +32,32 @@ timer2 = setTimeout(() => {progress.classList.remove("active");}, 5300);
 }
 
 
+ // insert in show factuer
+ function filter(){
+    let Designation=[]
+    let PrixTotal=[]
+    let PrixUniter=[]
+    let Qte=[]
+    let Unite=[]
+    document.querySelectorAll(`.select-btn > span`).forEach((userItem) => {Designation=[...Designation,userItem.innerText]})
+    document.querySelectorAll('#PrixUniter').forEach((userItem) => {PrixUniter=[...PrixUniter,userItem.value]})
+    document.querySelectorAll('#PrixTotal').forEach((userItem) => {PrixTotal=[...PrixTotal,userItem.value]})
+    document.querySelectorAll('#Qte').forEach((userItem) => {Qte=[...Qte,userItem.value]})
+    document.querySelectorAll('#Unite').forEach((userItem) => {Unite=[...Unite,userItem.value]})
+    if(Designation.length === PrixTotal.length && PrixUniter.length === Qte.length ){
+        // insert values in body object
+        for(let i=0;i<Designation.length;i++){
+            object_facture.body.push({
+                Designation: Designation[i],
+                Qte: Qte[i],
+                Unite: Unite[i],
+                PrixUniter:PrixUniter[i],
+                PrixTotal: PrixTotal[i],
+            },)
+        }
+    }
 
+}
 
 
 function insertObject(){
@@ -62,32 +94,7 @@ function insertObject(){
     document.querySelector(`#Show_zoneSome`).innerText= document.querySelector('#zoneSome').innerText
 
 
-    // insert in show factuer
-    function filter(){
-        let Designation=[]
-        let PrixTotal=[]
-        let PrixUniter=[]
-        let Qte=[]
-        let Unite=[]
-        document.querySelectorAll(`.select-btn > span`).forEach((userItem) => {Designation=[...Designation,userItem.innerText]})
-        document.querySelectorAll('#PrixUniter').forEach((userItem) => {PrixUniter=[...PrixUniter,userItem.value]})
-        document.querySelectorAll('#PrixTotal').forEach((userItem) => {PrixTotal=[...PrixTotal,userItem.value]})
-        document.querySelectorAll('#Qte').forEach((userItem) => {Qte=[...Qte,userItem.value]})
-        document.querySelectorAll('#Unite').forEach((userItem) => {Unite=[...Unite,userItem.value]})
-        if(Designation.length === PrixTotal.length && PrixUniter.length === Qte.length ){
-            // insert values in body object
-            for(let i=0;i<Designation.length;i++){
-                object_facture.body.push({
-                    Designation: Designation[i],
-                    Qte: Qte[i],
-                    Unite: Unite[i],
-                    PrixUniter:PrixUniter[i],
-                    PrixTotal: PrixTotal[i],
-                },)
-            }
-        }
 
-    }
     filter()
 
 
@@ -95,12 +102,8 @@ function insertObject(){
 
     // ? insert in header object facture
     object_facture.header['numFacture']='F'+'/'+document.querySelector(`#numFacture`).value+'/'+(d.getMonth()+1)+((''+d.getFullYear()).substr(2))
-
     let header=['date','modelCar','objectCar','matriqulCar','kilometrageCar']
-    function filteer(ee){
-        object_facture.header[ee]=document.querySelector(`#${ee}`).value
-    }
-    header.map(i=>filteer(i))
+    header.map(i=>{object_facture.header[i]=document.querySelector(`#${i}`).value})
     // ? insert in header object facture
 
 
@@ -115,8 +118,8 @@ function insertObject(){
 
     var zoneProdut = document.getElementById('tbody');
     zoneProdut.innerHTML=' '
-    console.log(zoneProdut.innerHTML)
-    console.log(object_facture.body)
+    // console.log(zoneProdut.innerHTML)
+    // console.log(object_facture.body)
     object_facture.body.map(e=>{
         const div=document.createElement('tr');
         div.innerHTML=`
@@ -139,7 +142,7 @@ function insertObject(){
 async function SaveFactuer(){
 
     try{
-        await axios.post("http://127.0.0.1:8000/factuer",object_facture)
+        await axios.post("http://127.0.0.1:8000/api/factuers",object_facture)
         .then(res=>{console.log(res)})
         .catch(err=>{console.log(err)})
         }
@@ -194,7 +197,8 @@ function calculeprixTotal(){
         document.querySelector('#montantHt').value=total.toFixed(2)+' DH'
         document.querySelector('#montantTv').value=(total*0.2).toFixed(2)+' DH'
         document.querySelector('#montantTTC').value=(total+total*0.2).toFixed(2)+' DH'
-        document.querySelector('#zoneSome').innerText=n2words((total+total*0.2), {lang: 'fr'})
+        document.querySelector('#zoneSome').innerHTML=n2words((total+total*0.2), {lang: 'fr'})
+        document.querySelector('#zoneSome').value=n2words((total+total*0.2), {lang: 'fr'})
     });
 
 

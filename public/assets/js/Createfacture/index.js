@@ -2,8 +2,9 @@
 
 // ?? print pdf
 function printDiv(divName) {
-    var printContents = document.getElementById(divName).innerHTML;
-     var originalContents = document.body.innerHTML;
+    const printContents = document.getElementById(divName).innerHTML;
+    console.log(printContents)
+     const originalContents = document.body.innerHTML;
     document.body.innerHTML = printContents;
      window.print();
     document.body.innerHTML = originalContents;
@@ -87,7 +88,7 @@ function deletZoneProdute(e) {
 var factuerApi = "";
 async function getnumFacture() {
 
-    console.log(document.querySelector('#numFacture').value )
+    // console.log(document.querySelector('#numFacture').value )
     if(document.querySelector('#numFacture').value  == ''){
         try{
             const Object = await axios.get("http://127.0.0.1:8000/api/factuer").then(res=>res.data)
@@ -111,7 +112,7 @@ getnumFacture();
 
 
 const check_numFacture=(i)=>{
-    console.log(i.value)
+    // console.log(i.value)
     let t=[]
     let qr=document.querySelector('#msgErr')
 

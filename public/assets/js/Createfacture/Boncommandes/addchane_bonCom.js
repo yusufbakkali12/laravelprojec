@@ -73,8 +73,8 @@ function deletzoneProdut_bonCome(e) {
     console.log("delete zone Produte");
 }
 
-var addZoneVehicule_bonCom = document.getElementById("addZoneVehicule_bonCom");
-var zoneVehicule_bonCom = document.getElementById("zoneVehicule_bonCom");
+const addZoneVehicule_bonCom = document.getElementById("addZoneVehicule_bonCom");
+const zoneVehicule_bonCom = document.getElementById("zoneVehicule_bonCom");
 addZoneVehicule_bonCom.addEventListener("click", function () {
     const div = document.createElement("div");
 

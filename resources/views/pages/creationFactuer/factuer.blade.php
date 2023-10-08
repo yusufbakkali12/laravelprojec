@@ -8,7 +8,7 @@
 	    <div class="app-content pt-3 p-md-3 p-lg-3">
 		    <div class="container-xl">
                 <h1 class="app-page-title">Overview</h1>
-
+            <!--//nav create show-->
                 <nav id="orders-table-tab" class="orders-table-tab rounded-5 app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-2 border border-dashed  px-3  shadow-sm">
 				    <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-bs-toggle="tab" href="#creationFactuer" role="tab" aria-controls="orders-all" aria-selected="true">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
@@ -25,19 +25,17 @@
                           Show
                     </a>
                 </nav>
-
+            <!--//nav create show-->
 
 				<div class="tab-content border border-dashed  rounded-5  shadow-sm overflow-hidden" id="orders-table-tab-content">
 
 
 
 
-                    <!--  //creation-->
+                <!--//creation-->
 			        <div class="tab-pane fade show active" id="creationFactuer" role="tabpanel" aria-labelledby="orders-all-tab">
                         <div class="col-12 ">
-
                             <div class="app-card app-card-chart h-100 shadow-sm">
-
                                 <div class="app-card-header p-3">
                                     <div class="row justify-content-between align-items-center">
                                         <div class="col-auto">
@@ -55,174 +53,97 @@
                                     <!--//row-->
                                 </div>
                                 <div class="app-card-body p-2 p-lg-3">
-
-
-
                                     <div class="">
 
-                                    <div class=" shadow-sm border border-dashed rounded-4 px-4 shadow-sm">
-                                        <div class="row py-2">
-                                            <div class="d-flex justify-content-between">
+                                        <div class=" shadow-sm border border-dashed rounded-4 px-4 shadow-sm">
+                                            <div class=" py-2">
+                                                <div class="d-flex justify-content-between row ">
 
-                                                <div class="">
-                                                    <div class=" d-flex align-items-center ">
-                                                        <label class="m-0 text-nowrap  fw-bold">Facture N°:</label>
-                                                        <input type="number" class="form-control ms-2"   id="numFacture" onkeyup="check_numFacture(this)">
-
+                                                    <div class="  col-6">
+                                                        <div class="d-flex align-items-center">
+                                                            <label class="m-0 text-nowrap  fw-bold col-5">Facture N°:</label>
+                                                            <input type="number" class="form-control "   id="numFacture" onkeyup="check_numFacture(this)">
+                                                        </div>
+                                                        <span class="small text-primary text-end" id="msgErr"></span>
                                                     </div>
-                                                    <div class="small text-primary" id="msgErr"></div>
 
-                                                </div>
-                                                <div class="d-flex align-items-center ms-2">
-                                                    <label for="date" class="form-label m-0 fw-bold">Date<span class="text-primary">*</span>:</label>
-                                                    <input type="date" class="form-control ms-2" id="date" >
+                                                    <div class="d-flex align-items-center col-6">
+                                                        <label for="date" class="form-label m-0 fw-bold col-5">Date<span class="text-primary">*</span>:</label>
+                                                        <input type="date" class="form-control " id="date" >
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row ">
                                             <div class=" ">
-                                                <div class="mb-2 d-flex justify-content-between ">
-                                                    <div class="d-flex align-items-center ">
-                                                        <label for="objectCar" class="form-label m-0 fw-bold">Objet<span class="text-primary">*</span>:</label>
-                                                        <select class="form-select selectpicker ms-2" id="objectCar" data-live-search="true" required="">
-                                                            <option value="">choisi Objet</option>
-                                                            <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
-                                                            </option>
-                                                            <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
-                                                            </option>
-                                                            <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
-                                                            </option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="d-flex align-items-center ">
-                                                        <label for="modelCar" class="form-label m-0 fw-bold">Véhicule:</label>
-                                                        <input type="text" class="form-control ms-2" id="modelCar">
-                                                    </div>
-                                                </div>
-
-                                                <div class="mb-2 d-flex justify-content-between ">
-                                                    <div class="d-flex align-items-center ">
-                                                        <label for="matriqulCar" class="form-label m-0 fw-bold" required="">Matriqul<span class="text-primary">*</span>:</label>
-                                                        <input type="text" class="form-control ms-2 text-uppercase" id="matriqulCar">
-                                                    </div>
-                                                    <div class="d-flex align-items-center ms-1" aria-autocomplete="0">
-                                                        <label for="kilometrageCar" class="form-label m-0 fw-bold">kilometrage:</label>
-
-                                                        <div class="input-group">
-                                                            <input type="number" class="form-control ms-2 text-uppercase " id="kilometrageCar">
-                                                            <span class="input-group-text">Km</span>
+                                                <div class=" ">
+                                                    <div class="mb-2  row ">
+                                                        <div class="d-flex align-items-center col-6 ">
+                                                            <label for="objectCar" class="form-label  fw-bold col-5">Subject <span class="text-primary">*</span> :</label>
+                                                            <select class="form-select selectpicker " id="objectCar" data-live-search="true" required="">
+                                                                <option value="">choisi Objet</option>
+                                                                <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
+                                                                </option>
+                                                                <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
+                                                                </option>
+                                                                <option value="Achat de pièces de recharge et reparation du véhicule">Achat de pièces de recharge et reparation du véhicule
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="d-flex align-items-center col-6 ">
+                                                            <label for="modelCar" class="form-label fw-bold col-5">Véhicule:</label>
+                                                            <input type="text" class="form-control" id="modelCar">
                                                         </div>
                                                     </div>
-                                                </div>
 
+                                                    <div class="mb-2 d-flex justify-content-between row ">
+                                                        <div class="d-flex align-items-center col-6 ">
+                                                            <label for="matriqulCar" class="form-label m-0 fw-bold col-5" required="">Matriqul<span class="text-primary">*</span>:</label>
+                                                            <input type="text" class="form-control  text-uppercase " id="matriqulCar">
+                                                        </div>
+                                                        <div class="d-flex align-items-center  col-6" aria-autocomplete="0">
+                                                            <label for="kilometrageCar" class="form-label fw-bold col-5">kilometrage:</label>
+                                                            <input type="number" class="form-control  text-uppercase " id="kilometrageCar">
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
 
                                         <!-- ########### zoneProdut############## -->
-                                        <div class="row  p-3 justify-content-around" id="zoneProdut">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="form-label  fw-bold">Designation<span class="text-primary">*</span></label>
-                                                                <button type="button" class="btn m-0 p-0 text-info text-decoration-underline" data-bs-toggle="modal" data-bs-target="#AjouteDesignation">(Ajoute Designation)</button>
-                                                    </div>
+                                            <div class="row  p-3 justify-content-around" id="zoneProdut">
+                                                <div>
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <label class="form-label  fw-bold">Designation<span class="text-primary">*</span></label>
+                                                                    <button type="button" class="btn m-0 p-0 text-info text-decoration-underline" data-bs-toggle="modal" data-bs-target="#AjouteDesignation">(Ajoute Designation)</button>
+                                                        </div>
 
-                                                    <div class="col-1 p-0">
-                                                        <label class="form-label fw-bold">Qté<span class="text-primary">*</span></label>
-                                                    </div>
-                                                    <div class="col-1 ">
-                                                        <label class="form-label fw-bold">Unite<span class="text-primary">*</span></label>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <label class="form-label fw-bold">Prix Uniter<span class="text-primary">*</span></label>
-                                                    </div>
-                                                    <div class="col-3">
-                                                        <label class="form-label fw-bold">Prix total</label>
+                                                        <div class="col-1 p-0">
+                                                            <label class="form-label fw-bold">Qty<span class="text-primary">*</span></label>
+                                                        </div>
+                                                        <div class="col-1 ">
+                                                            <label class="form-label fw-bold">Unit<span class="text-primary">*</span></label>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label class="form-label fw-bold">Unit Price <span class="text-primary">*</span></label>
+                                                        </div>
+                                                        <div class="col-3">
+                                                            <label class="form-label fw-bold">total Price</label>
+                                                        </div>
                                                     </div>
                                                 </div>
+
+
+
                                             </div>
-
-
-
-
-                                            <div>
-                                                <div class="row mb-1">
-                                                    <!-- rowSelect -->
-                                                    <div class="col-sm-4 px-1">
-
-                                                        <!-- ###########select############ -->
-                                                        <div class="wrapper">
-                                                            <div class="select-btn" onclick="FselectBtn(this)">
-                                                                <span>Select Product</span>
-                                                                <i class="uil uil-angle-down"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
-                                                                  </svg></i>
-                                                            </div>
-                                                            <div class="content col-sm-4 ">
-                                                                <div class="search">
-                                                                    <i class="uil uil-search">
-                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                                                                          </svg>
-                                                                    </i>
-                                                                    <input id="search-input" spellcheck="false" type="text" placeholder="Search">
-                                                                </div>
-                                                                <ul class="options ps-0"></ul>
-                                                            </div>
-                                                        </div>
-                                                        <!-- ###########select############ -->
-
-                                                    </div>
-
-                                                    <div class="col-sm-1 px-1">
-                                                        <div class="input-group">
-                                                            <!-- ! ####### input prix ########  -->
-                                                            <input type="number" name="Qte[]" class="form-control" id="Qte" placeholder="Qté" onkeyup="calculeQte(this)">
-                                                            <!-- !####### input prix ########  -->
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-1 px-1">
-                                                        <select name="Unite[]" id="Unite" class=" form-select">
-                                                            <option value="Piece">Piece</option>
-                                                            <option value="Litter">Litter</option>
-                                                            <option value="Faire">Faire</option>
-                                                        </select>
-                                                    </div>
-
-                                                    <div class="col-sm-3 px-1">
-                                                        <div class="input-group">
-                                                            <input type="number" name="PrixUniter" class="form-control " id="PrixUniter" placeholder="Prix Uniter" onkeyup="calculePrixUniter(this)">
-                                                            <span class="input-group-text">DH</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-2 px-1">
-                                                        <div class="input-group">
-                                                            <input type="number" name="PrixTotal" class="form-control border border-2" id="PrixTotal" placeholder="Prix Total" value="" disabled>
-                                                            <span class="input-group-text">DH</span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-sm-1 px-2">
-                                                        <button type="button" class="btn btn-primary text-white rounded-5 h-100 w-100 " data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Suppreme line" onclick="deletZoneProdute(this)">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser" viewBox="0 0 16 16">
-                                                                <path d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z"></path>
-                                                              </svg> Sup
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
 
 
                                         <!-- ########### zoneProdut############## -->
 
                                         <div class="p-3">
-                                            <button class="btn btn-info  text-white  rounded-5 px-3" id="addZone">
+                                            <button class="btn btn-info  text-white  rounded-5 px-3" onclick="addto()" id="addZone">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus-circle fw-bold" viewBox="0 0 16 16">
                                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
                                                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
@@ -284,16 +205,16 @@
                             </div>
                             <!--//app-card-->
                         </div>
-
-			        </div><!--//creation-->
-
-
+			        </div>
+                <!--//creation-->
 
 
 
 
 
-                    <!--//Show-->
+
+
+                <!--//Show-->
 			        <div class="tab-pane fade " id="ShowFactuer" role="tabpanel" aria-labelledby="orders-paid-tab">
 
                         <div class="col-12 ">
@@ -325,12 +246,8 @@
                                                             </svg>
                                                             imprime
                                                         </button>
-                                                        <script>
-
-                                                        </script>
+                                                        
                                                     </div>
-
-
                                             </div>
                                         </div>
                                         <!--//col-->
@@ -412,7 +329,7 @@
                                                         <p class="text-nowrap my-0 small"> Montant T.V.A<span class="fw-semibold">20%</span>: <span id="Show_montantTv">00000</span></p>
                                                     </div>
                                                     <div class="my-0">
-                                                        <p class="text-nowrap my-0 small">Montant T.T.C : <span id="Show_montantTTC"class=" fw-bold">0000</span></p>
+                                                        <p class="text-nowrap my-0 small">Montant T.T.C : <span id="Show_montantTTC"class=" fw-bold">00000</span></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -437,7 +354,8 @@
                             </div>
 			            </div>
 
-			        </div><!--//Show-->
+			        </div>
+                <!--//Show-->
 
 
 				</div><!--//tab-content-->
@@ -446,18 +364,19 @@
 
 		    </div><!--//container-fluid-->
 	    </div><!--//app-content-->
-
-        <div class="toastt bg-success bg-opacity-10">
-            <div class="toastt-content ">
-              <i class="fas fa-solid fa-check check"></i>
-              <div class="message">
-                <span class="text text-1">Success</span>
-                <span class="text text-2">Your changes has been saved</span>
-              </div>
+        <!--//alert-->
+            <div class="toastt bg-success bg-opacity-10">
+                <div class="toastt-content ">
+                <i class="fas fa-solid fa-check check"></i>
+                <div class="message">
+                    <span class="text text-1">Success</span>
+                    <span class="text text-2">Your changes has been saved</span>
+                </div>
+                </div>
+                <i class="fa-solid fa-xmark close"></i>
+                <div class="progress active"></div>
             </div>
-            <i class="fa-solid fa-xmark close"></i>
-            <div class="progress active"></div>
-        </div>
+        <!--//alert-->
     </div><!--//app-wrapper-->
 
 

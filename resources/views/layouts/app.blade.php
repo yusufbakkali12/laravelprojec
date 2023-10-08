@@ -35,14 +35,17 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script> --}}
         {{-- <script defer src=" {{ asset("assets/js/bootstrap.bundle.min.js") }}"></script> --}}
         {{-- <script defer src=" {{ asset("assets/js/popper.min.js") }}"></script> --}}
-
-    <script defer src=" {{ asset("assets/js/Createfacture/n2words.js") }}"></script>
-    <script defer src="{{ asset("assets/js/axios.min.js") }}" ></script>
+    <script defer src="{{asset("assets/js/package/interact.min.js")}}"></script>
+    <script defer src="{{ asset("assets/js/package/n2words.js") }}"></script>
+    <script defer src="{{ asset("assets/js/package/axios.min.js") }}" ></script>
+ 
     {{-- <script defer src=" {{ asset("assets/js/app.js") }}"></script> --}}
-    <script defer src=" {{ asset('assets/plugins/fontawesome/js/all.min.js') }}"></script>
-    <script defer src=" {{ asset("assets/js/Createfacture/addchane.js") }}"></script>
-    <script defer src=" {{ asset("assets/js/Createfacture/calcule.js") }}"></script>
-    <script defer src=" {{ asset("assets/js/Createfacture/index.js") }}"></script>
+    <script defer src="{{ asset('assets/plugins/fontawesome/js/all.min.js') }}"></script>
+    <script defer src="{{ asset("assets/js/Createfacture/addchane.js") }}"></script>
+    <script defer  src="{{ asset("assets/js/Createfacture/calcule.js") }}" ></script>
+    <script defer src="{{ asset("assets/js/Createfacture/index.js") }}" ></script>
+    <script defer src="{{ asset("assets/js/Createfacture/interact.js") }}" ></script>
+   
     {{-- <script script> --}}
 
 

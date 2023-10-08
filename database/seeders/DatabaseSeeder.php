@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+         \App\Models\Templent::factory(10)->create();
+         \App\Models\Chemp::factory(10)->create();
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Templent;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,23 +25,23 @@ class HomeController extends Controller
      */
     public function factuer()
     {
-        return view('pages.creationFactuer.factuer');
+        return view('pages.creationFactuer.Factuer');
 
     }
 
     public function devis()
     {
-        return view('pages.creationFactuer.devis');
+        return view('pages.creationFactuer.Devis');
 
     }
     public function bonCommande()
     {
-        return view('pages.creationFactuer.bonCommande');
+        return view('pages.creationFactuer.BonCommande');
 
     }
     public function bonLivraison()
     {
-        return view('pages.creationFactuer.bonLivraison');
+        return view('pages.creationFactuer.BonLivraison');
 
     }
     // public function orders()
@@ -71,5 +72,11 @@ class HomeController extends Controller
     public function poubelles()
     {
         return view('pages.poubelles');
+    }
+
+    public function customerFactuer()
+    {
+        $templents=Templent::paginate(6);
+        return view('pages.creationFactuer.Customizefactuer',['templents'=>$templents]);
     }
 }

@@ -11,6 +11,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\archiveController;
 use App\Http\Controllers\FactuerController;
 use App\Http\Controllers\ListproductController;
+use App\Http\Controllers\TemplentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,11 +31,11 @@ Route::get('/', function () {return view('welcome');});
 // Auth::routes();
 Auth::routes(['verify' => true]);
 
-// for test
+// for testing
 Route::get('/showtest', function () { return view('layouts.showtest');});
 
 Route::get('/test', [BonComController::class,'index']);
-// for test
+// for testing
 
 
 
@@ -42,15 +43,19 @@ Route::controller(HomeController::class)->group(function() {
     Route::get('/settings','settings')->name('settings');
     Route::get('/clients', 'clients')->name('clients');
     Route::get('/poubelles', 'poubelles')->name('poubelles');
-    Route::get('/creationfactuer/devis','devis')->name('devis');
-    Route::get('/creationfactuer/factuer','factuer')->name('factuer');
-    Route::get('/creationfactuer/bon-commande','bonCommande')->name('bonCommande');
-    Route::get('/creationfactuer/bon-livraison','bonLivraison')->name('bonLivraison');
+    Route::prefix('creationfactuer')->group(function() {
+        Route::get('/devis','devis')->name('devis');
+        Route::get('/factuer','factuer')->name('factuer');
+        Route::get('/bon-commande','bonCommande')->name('bonCommande');
+        Route::get('/bon-livraison','bonLivraison')->name('bonLivraison');
+        Route::get('/customer-factuer','customerFactuer')->name('customerFactuer');
+        // Route::post('/customer-factuer/{he}','customerFactuer')->name('customerFactuer.store');
+    });
 });
 
 
 
-
+// Route::post('customer-factuer/{he}','customerFactuer')->name('customerFactuer.store');
 
 
 
@@ -67,6 +72,8 @@ Route::resource('listproduct', ListproductController::class);
 
 
 
+
+// Route::resource('customerFactuer', TemplentController::class);
 
 
 
